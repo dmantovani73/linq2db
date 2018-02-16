@@ -12,10 +12,10 @@ class Program
     {
         using (var db = new NorthwindDataContext(DataProvider, ConnectionString))
         {
-            db.Customers.Take(1).Dump();
-            db.Employees.Take(1).Dump();
+            //db.Customers.Take(1).Dump();
+            //db.Employees.Take(1).Dump();
             db.Orders.Take(1).Dump();
-            db.OrderDetails.Take(1).Dump();
+            //db.OrderDetails.Take(1).Dump();
         }
     }
 }
