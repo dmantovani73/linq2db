@@ -7,9 +7,9 @@ class Order
     [NotNull]
     public long Id { get; set; }
 
-    public int CustomerId { get; set; }
+    public string CustomerId { get; set; }
 
-    public int EmployeeId { get; set; }
+    public long EmployeeId { get; set; }
 
     public DateTime OrderDate { get; set; }
 }
