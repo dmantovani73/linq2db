@@ -1,4 +1,5 @@
-﻿using LinqToDB.DataProvider;
+﻿using LinqToDB;
+using LinqToDB.DataProvider;
 using LinqToDB.DataProvider.SQLite;
 using System.Linq;
 
@@ -13,9 +14,10 @@ class Program
         using (var db = new NorthwindDataContext(DataProvider, ConnectionString))
         {
             //db.Customers.Take(1).Dump();
-            //db.Employees.Take(1).Dump();
-            //db.Orders.Take(1).Dump();
-            db.OrderDetails.Take(1).Dump();
+            //db.Employees.LoadWith(e => e.Boss).Dump();
+            //db.Orders.LoadWith(e => e.Customer).LoadWith(e => e.Employee).Take(1).Dump();
+            //db.OrderDetails.LoadWith(e => e.Order).LoadWith(e => e.Product).Take(1).Dump();
+            db.Products.Take(1).Dump();
         }
     }
 }
