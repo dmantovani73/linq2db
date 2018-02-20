@@ -30,4 +30,10 @@ class Product
 
     [NotNull]
     public long Discontinued { get; set; }
+
+    [Association(ThisKey = nameof(SupplierId), OtherKey = nameof(global::Supplier.Id), CanBeNull = false)]
+    public Supplier Supplier { get; set; }
+
+    [Association(ThisKey = nameof(CategoryId), OtherKey = nameof(global::Category.Id), CanBeNull = false)]
+    public Category Category { get; set; }
 }
