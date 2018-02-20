@@ -15,20 +15,25 @@ class Program
     {
         using (var db = new NorthwindDataContext(DataProvider, ConnectionString))
         {
-            //db.Customers.Take(1).Dump();
-            //db.Employees.LoadWith(e => e.Boss).Dump();
-            //db.Orders.LoadWith(e => e.Customer).LoadWith(e => e.Employee).Take(1).Dump();
-            //db.OrderDetails.LoadWith(e => e.Order).LoadWith(e => e.Product).Take(1).Dump();
-            //db.Products.LoadWith(e => e.Supplier).LoadWith(e => e.Category).Take(1).Dump();
-            //db.Suppliers.Take(1).Dump();
-            //db.Categories.Take(1).Dump();
-
             //var q = TotalUnitsInStockForProductsOfCategory(db, 4);
             //var q = EmployeesThasHaventBoss(db);
-            var q = NumberOfCollaborators(db);
+            //var q = NumberOfCollaborators(db);
 
-            DumpQuery(db, q);
+            //DumpQuery(db, q);
+
+            CreateTable(db);
         }
+    }
+
+    static void DumpAllTables(NorthwindDataContext db)
+    {
+        db.Customers.Take(1).Dump();
+        db.Employees.LoadWith(e => e.Boss).Dump();
+        db.Orders.LoadWith(e => e.Customer).LoadWith(e => e.Employee).Take(1).Dump();
+        db.OrderDetails.LoadWith(e => e.Order).LoadWith(e => e.Product).Take(1).Dump();
+        db.Products.LoadWith(e => e.Supplier).LoadWith(e => e.Category).Take(1).Dump();
+        db.Suppliers.Take(1).Dump();
+        db.Categories.Take(1).Dump();
     }
 
     /// <summary>
@@ -66,6 +71,17 @@ class Program
             into g
             let boss = g.Key
             select new { boss.FirstName, boss.LastName, CollaboratorsCount = g.Count() };
+
+    static void CreateTable(NorthwindDataContext db)
+    {
+        db.CreateTableIfNotExists<Person>();
+        db.DeleteAll<Person>();
+
+        db.InsertWithInt32Identity(new Person { FirstName = "John", LastName = "Smith", Age = 30 });
+        db.InsertWithInt32Identity(new Person { FirstName = "Jim", LastName = "Johnson" });
+
+        DumpQuery(db, db.GetTable<Person>());
+    }
 
     static void DumpQuery<T>(DataConnection db, T query)
     {
