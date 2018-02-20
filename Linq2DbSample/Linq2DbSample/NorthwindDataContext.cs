@@ -15,4 +15,10 @@ class NorthwindDataContext : DataConnection
     public ITable<Order> Orders => GetTable<Order>();
 
     public ITable<OrderDetail> OrderDetails => GetTable<OrderDetail>();
+
+    public ITable<Product> Products => GetTable<Product>();
+
+    public ITable<Supplier> Suppliers => GetTable<Supplier>();
+
+    public ITable<Category> Categories => GetTable<Category>();
 }

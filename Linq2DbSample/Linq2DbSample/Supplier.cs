@@ -1,10 +1,10 @@
 ﻿using LinqToDB.Mapping;
 
-class Customer
+class Supplier
 {
     [PrimaryKey]
     [NotNull]
-    public string Id { get; set; }
+    public long Id { get; set; }
 
     public string CompanyName { get; set; }
 
@@ -25,4 +25,6 @@ class Customer
     public string Phone { get; set; }
 
     public string Fax { get; set; }
+
+    public string HomePage { get; set; }
 }
