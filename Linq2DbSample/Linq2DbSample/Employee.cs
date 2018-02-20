@@ -36,7 +36,7 @@ class Employee
 
     public string Notes { get; set; }
 
-    public long ReportsTo { get; set; }
+    public long? ReportsTo { get; set; }
 
     public string PhotoPath { get; set; }
 
