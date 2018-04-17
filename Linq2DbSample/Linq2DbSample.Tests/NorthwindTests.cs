@@ -1,5 +1,6 @@
 using LinqToDB.DataProvider.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace Linq2DbSample.Tests
 {
@@ -30,6 +31,22 @@ namespace Linq2DbSample.Tests
         {
             var units = db.TotalUnitsInStockForProductsOfCategory(4);
             Assert.AreEqual(units, 393);
+        }
+
+        [TestMethod]
+        public void employees_thas_havent_boss()
+        {
+            var employees = db.EmployeesThasHaventBoss();
+            Assert.IsTrue(employees.First().Id == 2);
+        }
+
+        [TestMethod]
+        public void number_of_collaborators()
+        {
+            var collaborators = db.NumberOfCollaborators();
+
+            Assert.IsTrue(collaborators.First(c => c.FirstName == "Andrew" && c.LastName == "Fuller").CollaboratorsCount == 5);
+            Assert.IsTrue(collaborators.First(c => c.FirstName == "Steven" && c.LastName == "Buchanan").CollaboratorsCount == 3);
         }
     }
 }

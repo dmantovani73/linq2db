@@ -11,9 +11,9 @@ class Program
     {
         using (var db = dbFactory.Create())
         {
-            var q = db.TotalUnitsInStockForProductsOfCategory(4);
+            //var q = db.TotalUnitsInStockForProductsOfCategory(4);
             //var q = db.EmployeesThasHaventBoss();
-            //var q = db.NumberOfCollaborators();
+            var q = db.NumberOfCollaborators();
 
             db.DumpQuery(q);
         }

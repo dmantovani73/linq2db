@@ -42,13 +42,18 @@ public static class NorthwindDataContextExtensions
     /// </summary>
     /// <param name="db"></param>
     /// <returns></returns>
-    public static IQueryable<object> NumberOfCollaborators(this NorthwindDataContext db) =>
+    public static IQueryable<EmployeeCollaborator> NumberOfCollaborators(this NorthwindDataContext db) =>
         from e in db.Employees
         join p in db.Employees on e.ReportsTo equals p.Id
         group e by new { p.FirstName, p.LastName }
             into g
-        let boss = g.Key
-        select new { boss.FirstName, boss.LastName, CollaboratorsCount = g.Count() };
+            let boss = g.Key
+            select new EmployeeCollaborator
+            {
+                FirstName = boss.FirstName,
+                LastName = boss.LastName,
+                CollaboratorsCount = g.Count()
+            };
 
     static void CreateTable(NorthwindDataContext db)
     {
