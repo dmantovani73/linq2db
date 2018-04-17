@@ -1,7 +1,7 @@
 ﻿using LinqToDB;
 using System.Linq;
 
-static class NorthwindDataContextExtensions
+public static class NorthwindDataContextExtensions
 {
     public static void DumpAllTables(this NorthwindDataContext db)
     {

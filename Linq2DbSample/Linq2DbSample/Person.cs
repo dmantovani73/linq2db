@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-class Person
+public class Person
 {
     [PrimaryKey]
     [NotNull]

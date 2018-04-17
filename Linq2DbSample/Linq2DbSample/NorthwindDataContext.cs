@@ -2,7 +2,7 @@
 using LinqToDB.Data;
 using LinqToDB.DataProvider;
 
-class NorthwindDataContext : DataConnection
+public class NorthwindDataContext : DataConnection
 {
     public NorthwindDataContext(IDataProvider dataProvider, string connectionString)
         : base(dataProvider, connectionString)

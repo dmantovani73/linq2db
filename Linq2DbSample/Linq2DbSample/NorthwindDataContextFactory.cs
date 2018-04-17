@@ -1,6 +1,6 @@
 ﻿using LinqToDB.DataProvider;
 
-class NorthwindDataContextFactory : IDataContextFactory<NorthwindDataContext>
+public class NorthwindDataContextFactory : IDataContextFactory<NorthwindDataContext>
 {
     readonly IDataProvider dataProvider;
 

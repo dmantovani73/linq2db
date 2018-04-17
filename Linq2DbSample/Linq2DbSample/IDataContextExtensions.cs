@@ -1,6 +1,6 @@
 ﻿using LinqToDB;
 
-static class IDataContextExtensions
+public static class IDataContextExtensions
 {
     public static void CreateTableIfNotExists<T>(this IDataContext db)
     {

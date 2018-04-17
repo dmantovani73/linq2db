@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Linq2DbSample\Northwind_small.sqlite" Link="Northwind_small.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db.Core" Version="1.10.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="2.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Linq2DbSample\Linq2DbSample.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-class Customer
+public class Customer
 {
     [PrimaryKey]
     [NotNull]

@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-class OrderDetail
+public class OrderDetail
 {
     [PrimaryKey]
     [NotNull]

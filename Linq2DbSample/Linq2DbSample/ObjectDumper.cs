@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 
-static class ObjectDumper
+public static class ObjectDumper
 {
     static readonly TextWriter DefaultTextWriter = Console.Out;
 

@@ -1,7 +1,7 @@
 ﻿using LinqToDB.Mapping;
 using System;
 
-class Order
+public class Order
 {
     [PrimaryKey]
     [NotNull]

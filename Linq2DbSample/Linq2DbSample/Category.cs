@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-class Category
+public class Category
 {
     [PrimaryKey]
     [NotNull]

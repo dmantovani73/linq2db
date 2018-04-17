@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-class Supplier
+public class Supplier
 {
     [PrimaryKey]
     [NotNull]

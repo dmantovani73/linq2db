@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-class Employee
+public class Employee
 {
     [PrimaryKey]
     [NotNull]
