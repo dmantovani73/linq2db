@@ -14,3 +14,6 @@
 ## Amministrare il db sqlite
 * http://www.sqliteexpert.com/download.html (Personal Edition)
 * https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox
+
+## Generare le classi (modello) C# a partire dallo schema di un db esistente
+* https://github.com/linq2db/t4models
