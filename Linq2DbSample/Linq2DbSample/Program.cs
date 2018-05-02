@@ -10,10 +10,14 @@ class Program
     static void Main(string[] args)
     {
         using (var db = dbFactory.Create())
+        //using (var db = new NorthwindDataContext(
+        //    dataProvider: SQLiteTools.GetDataProvider(),
+        //    connectionString: "Data Source=Northwind_small.sqlite"
+        //))
         {
             //var q = db.TotalUnitsInStockForProductsOfCategory(4);
-            //var q = db.EmployeesThasHaventBoss();
-            var q = db.NumberOfCollaborators();
+            var q = db.EmployeesThasHaventBoss();
+            //var q = db.NumberOfCollaborators();
 
             db.DumpQuery(q);
         }

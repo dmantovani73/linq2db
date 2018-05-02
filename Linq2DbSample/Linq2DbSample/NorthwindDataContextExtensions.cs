@@ -23,7 +23,7 @@ public static class NorthwindDataContextExtensions
     public static long TotalUnitsInStockForProductsOfCategory(this NorthwindDataContext db, long categoryId) => (
         from p in db.Products
         join c in db.Categories on p.CategoryId equals c.Id
-        where p.CategoryId == 4
+        where p.CategoryId == categoryId
         select new { p.Id, p.ProductName, p.CategoryId, c.CategoryName, p.UnitsInStock }
     ).Sum(e => e.UnitsInStock);
 
